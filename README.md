@@ -1,2 +1,2 @@
 # scripts
-Basic C,Python,Shell Scripts
+Basic C,Shell Scripts
