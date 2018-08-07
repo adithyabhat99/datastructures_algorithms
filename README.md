@@ -1,2 +1,2 @@
 # scripts
-Basic C,Shell Scripts
+Basic C Programs & Shell Scripts
