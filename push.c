@@ -1,15 +1,12 @@
 #include<stdio.h>
 #include<stdlib.h>
-int *c;
 void display(int *a,int n);
 void push(int *a,int ele,int n);
 void main()
 {
 	int a[100],ele,n,i,x=1;
-	c=&x;
-
 	n=0;
-	while(*c==1)
+	while(x==1)
 	{
 		printf("Enter the element to push\n");
 		scanf("%d",&ele);
@@ -19,7 +16,7 @@ void main()
 		n++;
 
 	}
-	if((*c)!=1)
+	if(x!=1)
 	{
 		
 		printf("\n");
