@@ -7,8 +7,7 @@ void out(int *a)
 {
 for(i=0;i<100;i++)
 {
-printf("%d\t",*a);
-a++;
+printf("%d\t",*(a+i));
 }
 }
 
@@ -32,7 +31,6 @@ void array(int *a)
 {
 for(i=0;i<100;i++)
 {
-	(*a)=(*a)+1;
-	a++;
+	*(a+i)=*(a+i)+5;
 }
 }
