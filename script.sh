@@ -6,6 +6,7 @@ cd
 ls
 echo ''
 echo 'Your music files are stored in ~/music.txt file '
+echo ''
 cd ~/Music
 ls>~/music.txt
 echo 'See your command history with less'
