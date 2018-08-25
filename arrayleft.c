@@ -8,7 +8,7 @@ void main()
     for(i=0;i<n;i++)
     	scanf("%ld",&a[i]);
     for(i=0;i<d;i++)
-    	b[i]=a[i];\
+    	b[i]=a[i];
     for(i=d;i<n;i++)
     	a[i-d]=a[i];
     for(i=n-d;i<n;i++)
