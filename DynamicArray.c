@@ -6,7 +6,7 @@ void main()
 	int *a,n,i,sum=0;
 	printf("Enter size\n");
 	scanf("%d",&n);
-	a =(int *)malloc(n*(sizeof(int)));
+	a =(int *)malloc(n*(sizeof(int)));  //import stdlib
 	printf("Enter elements\n");
 	for(i=0;i<n;i++)
 	{
