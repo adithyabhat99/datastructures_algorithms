@@ -2,12 +2,12 @@
 #include<string.h>
 void main()
 {
-	
+	//to calculate number of steps to convert a string to palindrome by only decreamenting a alphabet by 1
 	int s,i,c=0,x;
 	char a[100];
 	scanf("%s",a);
 	s=strlen(a);
-	for(i=0;i<s;i++)
+	for(i=0;i<s/2;i++)
 	{
 	 if(a[i]>a[s-i-1])
 		{
@@ -23,7 +23,7 @@ void main()
 		}
 
 	}
-	printf("%d\n",c/2);
+	printf("%d\n",c);
 	}
 	
 
