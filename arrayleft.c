@@ -1,6 +1,6 @@
 #include<stdio.h>
 void main()
-{
+{    moves the array elements to left by given value
 	long int d,n,a[100000],b[100000],i,c=0;
 	printf("Enter array size and value of d\n");
     scanf("%ld%ld",&n,&d);
