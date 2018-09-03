@@ -1,6 +1,6 @@
 #include<stdio.h>
 int ret(char a[1000])
-{
+{ //removes 010 pattern from a binary string,counts number of steps
 	int i,count=0,size=0;
 
 	for(i=0;a[i]!='\0';i++)
