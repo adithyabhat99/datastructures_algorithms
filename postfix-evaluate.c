@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<ctype.h>
+#include<math.h>
 struct st
 {
     int stack[20];
@@ -12,6 +13,7 @@ int cal(int n,int m,char c)
   	 if(c=='-') x=n-m;
   	 if(c=='*') x=n*m;
   	 if(c=='/') x=n/m;
+  	 if(c=='^') x=pow(n,m);
    return x;
 }
 void push(struct st *s,int c )
@@ -25,7 +27,7 @@ int pop(struct st *s)
 void main()
 {
 	struct s;
-	char ex[10];
+	char ex[20];
 	scanf("%s",ex);
 	int n1,n2,x,i;
 	s.top=-1;
@@ -40,9 +42,8 @@ void main()
     		n1=pop(&s);
     		n2=pop(&s);
     	x=cal(n2,n1,ex[i]);
-    	printf("%d %d %d\n",n2,n1,x);
     	push(&s,x);
     }
     }
-    printf("\n%d\n",s.stack[s.top]);
+    printf("%d\n",s.stack[s.top]);
 }
