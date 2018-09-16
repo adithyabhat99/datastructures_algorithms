@@ -33,7 +33,7 @@ void main()
     {
     	if(isdigit(ex[i]))
     	{
-    		printf("\n%d\n",(int)ex[i]-'0');
+    		
     		push(&s,(int)ex[i]-'0'); }
     	else
     	{ 
