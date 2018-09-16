@@ -48,6 +48,8 @@ int main(void) {
             while((x=pop())!='(')
             postfix[j++]=x;
         }
+	    else if(sym=='^' && stack[top]=='^')
+		    push(sym);
         else 
         {
             while(priority(stack[top])>=priority(sym))
