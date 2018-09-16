@@ -19,9 +19,7 @@ int priority(char a)
 
 char pop()
 {
-    if(top==-1)
-    return -1;
-    else
+    
     return stack[top--];
 }
 void push(char a)
