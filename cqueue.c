@@ -1,56 +1,47 @@
 #include<stdio.h>
 #define max 5
-struct  queue
+struct queue
 {
 	char q[5];
-	int r,f;
+	int f,r;
 };
+int count;
 void enq(struct queue *s,char item)
 {
-if(s->r==max)
-{
-	printf("Queue is full\n");
-	return;
-}
-else
-{
-	s->r=s->r+1;
-	s->q[s->r]=item;
-	return;
-}
+	if(count==max)
+		printf("Queue is full\n");
+	else
+	{
+		s->r=(s->r+1)%max;
+		s->q[s->r]=item;
+		count++;
+	}
 }
 char deq(struct queue *s)
 {
-	char c;
-	c='0';
-	if(s->r==-1)
+	char c='0';
+	if(count==0)
 	{
 		printf("Queue is empty\n");
+		return c;
 	}
 	else
 	{
-
-		c= s->q[s->f];
-		s->f=s->f+1;
+		c=s->q[s->f];
+		s->f=(s->f+1)%max;
+		count--;
+		return c;
 	}
-	if(s->f>s->r) //reset queue
-	{
-		s->f=0;
-		s->r=-1;
-	}
-	return c;
 }
 void dis(struct queue s)
 {
 	int i;
-if(s.r==-1)
-	{
-		printf("Queue is empty\n");	
-	}
+	if(count==0)
+		printf("Queue is empty\n");
 	else
 	{
-      for(i=s.f;i<=s.r;i++)
-      	printf("%c ",s.q[i]);
+		for(i=s.f;i<=(s.r+count)%max;i++)
+			printf("%c ",s.q[i%max]);
 	}
 }
 
@@ -84,4 +75,3 @@ int main()
 	}while(ch!=4);
 	return 0;
 }
-
