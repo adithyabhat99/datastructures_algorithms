@@ -8,24 +8,26 @@ struct  queue
 void insert(struct queue *s,int item)
 {
 	int i,j;
-	if(s->r==max) { printf("Queue is full\n"); return ; }
+	if(s->r==max-1) { printf("Queue is full\n"); return ; }
 	else
 	{
 	if(item<=s->q[s->r])
 	{	s->r=s->r+1;
 		s->q[s->r]=item; return; }
+		else
+		{
 	for(i=s->f;i<=s->r;i++)
 	{
 		if(s->q[i]<item)
 		{
 			for(j=s->r;j>=i;j--)
 				s->q[j+1]=s->q[j];
-			s->r=s->r+1;
 			s->q[i]=item;
+			s->r=s->r+1;
 			return;
 		}
 
-	} 
+	} }
    }
    if(s->r==-1)
 	{
