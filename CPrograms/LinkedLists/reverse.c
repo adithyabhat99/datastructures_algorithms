@@ -83,7 +83,7 @@ void reverse(node *head)
 		next=next->link;
 	}
 	curr->link=prev;
-	*head=curr	;
+	*head=curr	a;
 
 }
 
