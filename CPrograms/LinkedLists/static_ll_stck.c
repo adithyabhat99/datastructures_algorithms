@@ -1,3 +1,4 @@
+//Stacks using array implementation of linked list
 #include<stdio.h>
 struct stack
 {
