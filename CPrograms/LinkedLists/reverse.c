@@ -83,7 +83,7 @@ void reverse(node *head)
 		next=next->link;
 	}
 	curr->link=prev;
-	*head=curr	a;
+	*head=curr;
 
 }
 
@@ -95,7 +95,7 @@ void main()
 	int item,ch;
 	do
 	{
-		printf("Enter choice\n1 Insert,2 Sort,3 Display,4 Delete\n");
+		printf("Enter choice\n1 Insert,2 Reverse,3 Display,4 Delete\n");
 		scanf("%d",&ch);
 		switch(ch)
 		{
