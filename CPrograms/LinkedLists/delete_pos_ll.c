@@ -1,4 +1,4 @@
-//Delete all values based on key position
+//Deleting a node based on key position
 #include<stdio.h>
 #include<stdlib.h>
 struct list
