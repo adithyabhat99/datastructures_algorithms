@@ -1,5 +1,5 @@
 #include<stdio.h>
-#define max 5
+#define max 6
 struct queue
 {
 	char q[5];
@@ -37,11 +37,23 @@ void dis(struct queue s)
 {
 	int i;
 	if(count==0)
+	{
 		printf("Queue is empty\n");
+		return;
+	}
+	if(s.r>=s.f)
+	{
+		for(i=s.f;i<=s.r;i++)
+			printf("%c ",s.q[i]);
+		printf("\n");
+	}
 	else
 	{
-		for(i=s.f;i<=(s.r+count)%max;i++)
-			printf("%c ",s.q[i%max]);
+		for(i=s.f;i<max;i++)
+			printf("%c ",s.q[i]);
+		for(i=0;i<s.r;i++)
+			printf("%c ",s.q[i]);
+		printf("\n");
 	}
 }
 
