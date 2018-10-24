@@ -51,7 +51,7 @@ void dis(struct queue s)
 	{
 		for(i=s.f;i<max;i++)
 			printf("%c ",s.q[i]);
-		for(i=0;i<s.r;i++)
+		for(i=0;i<=s.r;i++)
 			printf("%c ",s.q[i]);
 		printf("\n");
 	}
