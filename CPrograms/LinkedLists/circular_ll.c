@@ -57,19 +57,10 @@ void display(node last)
 }
 void delete_r(node *last)
 {
-	node prev=NULL;
 	node t=*last;
 	if(c==0)
 	{
 		printf("Empty\n");
-		return;
-	}
-	if((*last)->link==NULL)
-	{
-		printf("Deleteted element is %d\n",(*last)->data);
-		*last=NULL;
-		c--;
-		free(*last);
 		return;
 	}
 	while(t->link!=(*last))
@@ -88,13 +79,6 @@ void delete_f(node *last)
 	if(c==0)
 	{
 		printf("Empty\n");
-		return;
-	}
-	if((*last)->link==NULL)
-	{
-		printf("Deleteted element is %d\n",(*last)->data);
-		*last=NULL;
-		c--;
 		return;
 	}
 	p=(*last)->link;
