@@ -11,7 +11,7 @@ void insert(struct queue *s,int item)
 	if(s->r==max-1) { printf("Queue is full\n"); return ; }
 	else
 	{
-	if(item<=s->q[s->r])
+	if(item<=s->q[s->r] || s->r==-1)
 	{	s->r=s->r+1;
 		s->q[s->r]=item; return; }
 		else
@@ -29,11 +29,6 @@ void insert(struct queue *s,int item)
 
 	} }
    }
-   if(s->r==-1)
-	{
-		s->r=s->r+1;
-	s->q[s->r]=item; 
-	}
 }
 
 int deq(struct queue *s)
