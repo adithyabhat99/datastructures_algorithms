@@ -1,3 +1,3 @@
 # scripts
-Basic C Programs & Shell Scripts <br />
-Credits are given if copied programs/methods
+Data Structures which I have learnt <br />
+As well as some shell scripts
