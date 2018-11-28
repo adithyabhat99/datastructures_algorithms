@@ -19,7 +19,7 @@ void level_oder(node root)
 		printf("%d ",curr->data);
 		if(curr->left!=NULL)
 		q[++r]=curr->left;
-	if(curr->right!=NULL)
+		if(curr->right!=NULL)
 		q[++r]=curr->right;
 	}
 }
