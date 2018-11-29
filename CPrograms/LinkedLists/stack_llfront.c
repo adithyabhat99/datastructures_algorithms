@@ -9,22 +9,6 @@ struct stack
 };
 int c;
 typedef struct stack* node;
-void insert(node *head,int item) //Use double ponter to use returntype void
-{
-	node t=*head;
-	node temp=(node)malloc(sizeof(struct list));
-    temp->link=NULL;
-    temp->data=item;
-	if(*head==NULL)
-		*head=temp;
-	else
-	{
-		while(t->link!=NULL)
-			t=t->link;
-		t->link=temp;
-	}
-}
-
 void display(node head)
 {
 	node p=head;
