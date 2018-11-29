@@ -33,4 +33,6 @@ void main()
     printf("Elements in the matrix are\n");
     printm(a,m,n);
     transpose(a,b,m,n);
+    free(a);
+    free(b);
 }
