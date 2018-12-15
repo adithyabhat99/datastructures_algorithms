@@ -13,4 +13,5 @@ void main()
     printf("Enter number\n");
     scanf("%d",&n);
     dope(m,n);
+    /*Pointer to a function can be declared by datatype (*ptr)=function_name*/
 }
