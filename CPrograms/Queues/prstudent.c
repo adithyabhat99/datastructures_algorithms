@@ -13,7 +13,7 @@ void insert()
 {
     if(r==max-1)
     {
-        printf("Queue is fll\n");
+        printf("Queue is full\n");
         return;
     }
     else
