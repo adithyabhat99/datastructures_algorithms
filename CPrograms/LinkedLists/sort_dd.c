@@ -72,7 +72,7 @@ void sort(node *head)
 		next=t->r;
 		while(next!=NULL)
 		{
-			if(prev->data>next->data)
+			if(prev->data>=next->data)
 			{
 				x=prev->data;
 				prev->data=next->data;
