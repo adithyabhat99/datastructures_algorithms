@@ -22,8 +22,8 @@ void insert(int i)
     }
     p=getnode();
     s[p].data=i;
-    s[top].link=p;
-    top=p;
+    s[top].link=p; //previos top link to newnode
+    top=p; //top updated to newnode
     c++;
 }
 void delete()
@@ -34,12 +34,13 @@ void delete()
         printf("Empty\n");
         return;
     }
+    //traverse untill previous element to top
     while(s[x].link!=top)
 	x=s[x].link;
-    s[x].link=s[top].link;
-    avail=top;
+    s[x].link=s[top].link; //link of previous = link of top
+    avail=top; //avail is updated
     printf("Deleted element is %d\n",s[top].data);
-    top=x;
+    top=x; //previous position becomes top
     c--;
 }
 void display()
@@ -50,7 +51,7 @@ void display()
         printf("Empty\n");
         return;
     }
-    for(i=0,j=0;j<=c;i=s[i].link,j++)
+    for(i=0,j=0;j<=c;i=s[i].link,j++)  
     {
         printf("%d ",s[i].data);
     }
@@ -60,9 +61,9 @@ void main()
 {
     int i,ch;
     for(i=0;i<9;i++) {
-        s[i].link=i+1;
+        s[i].link=i+1; //default link
     }
-    s[i].link=-1;
+    s[i].link=-1; //last node
     do
 	{
 		printf("Enter choice\n1 Insert,2 Delete,3 Display\n");
