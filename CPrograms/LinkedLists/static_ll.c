@@ -37,7 +37,7 @@ void delete()
     //traverse untill previous element to top
     while(s[x].link!=top)
 	x=s[x].link;
-    s[x].link=s[top].link; //link of previous = link of top
+    s[x].link=s[top].link;
     avail=top; //avail is updated
     printf("Deleted element is %d\n",s[top].data);
     top=x; //previous position becomes top
