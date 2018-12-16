@@ -79,7 +79,7 @@ void preorder(node root)
 {
 	if(root==NULL)
 		return;
-	printf("%d ",root->data);
+	printf("%d",root->data);
 	preorder(root->left);
 	preorder(root->right);
 }
@@ -89,7 +89,7 @@ void main()
 	int ch,item;
 	do
 	{
-		printf("Choices:1 Insert,2 Level Order,3 Inorder,4 Preorder,5 Postoder\n");
+		printf("Choices:1 Insert,2 Level Order,3 Inorder,4 Preorder,5 Postoder6 Tree Display\n");
 		scanf("%d",&ch);
 		switch(ch)
 		{
@@ -108,6 +108,8 @@ void main()
 			break;
 			case 5:postorder(root);
 			printf("\n");
+			break;
+			case 6:dis_tree(root,0);
 			break;
 			default:return;
 		}
