@@ -50,6 +50,22 @@ void preorder(int p)
 	preorder(2*p+1);
 	preorder(2*p+2);
 }
+void in(int p)
+{
+    if(m==0 || s[p].used==0)
+    return;
+    in(2*p+1);
+    printf("%d ",s[p].data);
+    in(2*p+2);
+}
+void po(int p)
+{
+	if(m==0 || s[p].used==0)
+		return;
+	po(2*p+1);
+	po(2*p+2);
+	printf("%d ",s[p].data);
+}
 void main()
 {
 	int ch;
@@ -64,6 +80,7 @@ void main()
 			else printf("full\n");
 			break;
 			case 2:preorder(0); printf("\n"); break;
+            case 3:in(0); printf("\n"); break;
 			default:return;
 		}
 	}while(ch);	
