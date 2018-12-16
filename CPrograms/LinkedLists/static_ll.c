@@ -3,7 +3,6 @@ struct ll
 {
     int data;
     int link;
-    int prev;
 }s[10];
 int avail,top,c=-1;
 int getnode()
@@ -15,7 +14,7 @@ int getnode()
 }
 void insert(int i)
 {
-    int p;
+    int p,prev;
     if(c==9)
     {
         printf("Full\n");
@@ -24,20 +23,23 @@ void insert(int i)
     p=getnode();
     s[p].data=i;
     s[top].link=p;
-    s[p].prev=top;
     top=p;
     c++;
 }
 void delete()
 {
+    int x=0;
     if(c==-1)
     {
         printf("Empty\n");
         return;
     }
+    while(s[x].link!=top)
+	x=s[x].link;
+    s[x].link=s[top].link;
     avail=top;
     printf("Deleted element is %d\n",s[top].data);
-    top=s[top].prev;
+    top=x;
     c--;
 }
 void display()
@@ -59,7 +61,6 @@ void main()
     int i,ch;
     for(i=0;i<9;i++) {
         s[i].link=i+1;
-        s[i].prev=i-1; 
     }
     s[i].link=-1;
     do
