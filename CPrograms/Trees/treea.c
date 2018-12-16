@@ -64,21 +64,30 @@ void in(int p)
     printf("%d ",s[p].data);
     in(2*p+2);
 }
+void post(int p)
+{
+	if(m==0 || s[p].used==0)
+		return;
+	post(p*2+1);
+	post(p*2+2);
+	printf("%d ",s[p].data);
+}
 void main()
 {
 	int ch;
 	do
 	{
-		printf("Tree using array\nChoice:1 Insert,2 Display(preorder),3 Inorder\n");
+		printf("Tree using array\nChoice:1 Insert,2 Preorder,3 Inorder,4 Postorder\n");
 		scanf("%d",&ch);
 		switch(ch)
 		{
 			case 1:if(m<10)
 			insert();
-			else printf("full\n");
 			break;
 			case 2:preorder(0); printf("\n"); break;
             case 3:in(0); printf("\n"); break;
+            case 4:post(0); printf("\n");
+            break;
 			default:return;
 		}
 	}while(ch);	
