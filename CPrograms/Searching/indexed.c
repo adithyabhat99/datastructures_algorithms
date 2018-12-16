@@ -20,7 +20,7 @@ void search(int key)
 {
     int p=key,c=0;
     while(s[p].data!=key && c<10) {  
-    p=(p+1)%20;
+    p=(p+1)%10;
     c++; //to avoid infinite loop
     }
     if(c>=10)
