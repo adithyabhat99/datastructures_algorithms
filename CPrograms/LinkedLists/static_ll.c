@@ -80,5 +80,5 @@ void main()
 			break;
 			default:return;
 		}
-	}while(ch!=4);
+	}while(ch);
 }
