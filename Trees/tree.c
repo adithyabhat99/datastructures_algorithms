@@ -18,9 +18,9 @@ void level_oder(node root)
 		curr=q[f++];
 		printf("%d ",curr->data);
 		if(curr->left!=NULL)
-		q[++r]=curr->left;
+			q[++r]=curr->left;
 		if(curr->right!=NULL)
-		q[++r]=curr->right;
+			q[++r]=curr->right;
 	}
 }
 void insert(node *root,int item)
