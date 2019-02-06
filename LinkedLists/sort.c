@@ -92,7 +92,22 @@ void display(node head)
 		printf("\n");
 	}
 }
+int middle(node root){
+	node head1,head2;
+	if(!root){
+		return -1;
+	}
+	if(!root->link)
+		return root->data;
+	head1=root->link;
+	head2=root->link;
+	while(head2->link && head2->link->link){
+		head1=head1->link;
+		head2=head2->link->link;
+	}
+	return head1->data;
 
+}
 void main()
 {
 	node head;
@@ -100,7 +115,7 @@ void main()
 	int item,ch;
 	do
 	{
-		printf("Enter choice\n1 Insert,2 Sort,3 Display,4 Delete\n");
+		printf("Enter choice\n1 Insert,2 Sort,3 Display,4 Delete,5 Print middle value\n");
 		scanf("%d",&ch);
 		switch(ch)
 		{
@@ -113,6 +128,9 @@ void main()
 			case 3: display(head);
 			break;
 			case 4: delete(&head);
+			break;
+			case 5:printf("Middle value %d",middle(head));
+			printf("\n");
 			break;
 			default:return;
 		}
