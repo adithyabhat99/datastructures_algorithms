@@ -4,8 +4,8 @@ int partition(int a[],int l,int h){
     int key=a[l];
     int i=l+1;
     int j=h;
-    while(i<j){
-        while(a[i]<key && i<=h)
+    while(i<=j){
+        while(a[i]<=key && i<=h)
             i++;
         while(a[j]>key)
             j--;
