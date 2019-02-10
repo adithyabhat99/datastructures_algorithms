@@ -1,3 +1,4 @@
+//this is a linked list program
 #include<stdio.h>
 #include<stdlib.h>
 struct ll
