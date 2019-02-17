@@ -50,7 +50,7 @@ void krushkal(Edge *E,int e,int n){
         if(sourceParent!=destParent){
             output[count]=curr;
             count++;
-            parent[sourceParent]=destParent;
+            parent[destParent]=sourceParent;
         }
         i++;
     }
