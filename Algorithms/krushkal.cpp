@@ -32,11 +32,11 @@ int findParent(int *parent,int n){
     return findParent(parent,parent[n]);
 }
 bool compare(Edge e1,Edge e2){
-    return e1.weight<e2.weight;
+    return e1.weight<e2.weight; //telling sort function to sort based on edge weight
 }
 void krushkal(Edge *E,int e,int n){
     int *parent=new int[e];
-    sort(E,E+e,compare);
+    sort(E,E+e,compare); //built in function under algorithms header file
     int i,count;
     for(i=0;i<e;i++)
         parent[i]=i;
