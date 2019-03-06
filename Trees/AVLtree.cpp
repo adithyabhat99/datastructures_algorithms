@@ -63,7 +63,7 @@ node insert(node root, int i)
     {
         return rightRotate(root);
     }
-    if (BF < 1 && i > root->right->data)
+    if (BF < -1 && i > root->right->data)
     {
         return leftRotate(root);
     }
