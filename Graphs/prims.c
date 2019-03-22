@@ -1,6 +1,6 @@
 #include <stdio.h>
 void main() {
-   int i, j, n, s;
+   int i, j, n, s,w;
    printf("Enter number of elements: ");
    scanf("%d", &n);
    int a[n][n], dist[n], used[n], parent[n];
@@ -17,14 +17,14 @@ void main() {
    dist[0] = 0;
    parent[0] = -1;
    for (i = 0; i < n-1; i++) {
-        int k = 0, k_s = 999;
-        for (j = 0; j < n; j++) if (dist[j] < k_s && used[j] == 0) {
-             k = j;
-             k_s = dist[j];
+        int u = 0, min = 999;
+        for (j = 0; j < n; j++) if (dist[j] < min && used[j] == 0) {
+             u = j;
+             min = dist[j];
         }
-        used[k] = 1;
-        for (j = 0; j < n; j++) {
-            if (!used[j] && a[k][j] != 999 && a[k][j] < dist[j]) parent[j] = k, dist[j] = a[k][j];
+        used[u] = 1;
+        for (w = 0; w < n; w++) {
+            if (!used[w] && a[u][w] != 999 && a[u][w] < dist[w]) parent[w] = u, dist[w] = a[u][w];
         }
    }
    printf("Results:\n");
