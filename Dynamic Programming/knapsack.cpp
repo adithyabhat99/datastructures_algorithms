@@ -32,6 +32,6 @@ int main(){
         cout<<"Enter maximum knapsack capapcity\n";
         cin>>W;
         cout<<"Maximum profit that can be obtained is "<<knap(profit,weight,n,W)<<endl;
+
         return 0;
 }
-~
