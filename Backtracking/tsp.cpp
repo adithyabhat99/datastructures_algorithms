@@ -5,6 +5,7 @@ and returns back to the starting point
 
 Its similar to hamiltonian cycle prblem(hamiltonian cycle prblem is NP Hard)
 */
+
 #include <iostream>
 using namespace std;
 int **a, *x, *best;

@@ -1,3 +1,8 @@
+/*
+All possible permutations of an array
+This code can be used to find all permutations of a string too
+*/
+
 #include <iostream>
 using namespace std;
 int a[] = {1, 2, 3, 4};
