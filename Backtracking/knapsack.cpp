@@ -9,13 +9,13 @@ int bound(int i, int n)
 {
     int cleft = c - cw;
     int b = cp;
-    while (i <= n && W[i] <= cleft)
+    while (i < n && W[i] <= cleft)
     {
         cleft -= W[i];
         b += P[i];
         i++;
     }
-    if (i <= n)
+    if (i < n)
     {
         b += P[i] / (W[i] * cleft);
     }
