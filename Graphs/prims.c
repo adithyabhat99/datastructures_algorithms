@@ -24,7 +24,11 @@ void main() {
         }
         used[u] = 1;
         for (w = 0; w < n; w++) {
-            if (!used[w] && a[u][w] != 999 && a[u][w] < dist[w]) parent[w] = u, dist[w] = a[u][w];
+            if (!used[w] && a[u][w] != 999 && a[u][w] < dist[w]) 
+            {
+              parent[w] = u;
+              dist[w] = a[u][w];
+            }
         }
    }
    printf("Results:\n");
