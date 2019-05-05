@@ -17,6 +17,7 @@ Enter each edge's source,dest and weight
 2 5 10
 3 4 11
 */
+//Finding MST for a graph
 #include<iostream>
 #include<algorithm>
 using namespace std;

@@ -1,7 +1,7 @@
 /*
 Test case
 9
-999 4 999 999 999 999 999 8 999    
+999 4 999 999 999 999 999 8 999
 4 999 8 999 999 999 999 11 999
 999 8 999 7 999 4 999 999 2
 999 999 999 7 0 9 14 999 999
@@ -25,7 +25,7 @@ Test case
 0 0 2 0 0 0 6 7 0
 if you takedis[i]=999 initially and all matrix entries are 0 for no direct edges
 */
-
+//Single source shortest path-Dijkstra's algorithm
 #include<iostream>
 using namespace std;
 int minW(int dis[],int v[],int n){

@@ -8,7 +8,7 @@ using namespace std;
 int bestw, cw, r;
 void loading(int n, int c, int w[], int x[], int i)
 {
-    if (i >= n)
+    if (i >=n)
     {
         if (cw >= bestw)
         {
@@ -16,7 +16,7 @@ void loading(int n, int c, int w[], int x[], int i)
             return;
         }
     }
-    r -= cw;
+    r -= w[i];
     if (w[i] + cw <= c)
     {
         x[i] = 1;

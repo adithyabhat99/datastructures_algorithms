@@ -20,7 +20,7 @@ void sort(int **a,int n){
         }
         c++;
     }
-    if(!f) cout<<"Cannot sort\n";
+    if(!f) cout<<"Cannot traverse\n";
     else cout<<endl;
 }
 int main(){
@@ -34,7 +34,7 @@ int main(){
     for(i=0;i<n;i++)
         for(j=0;j<n;j++)
             cin>>a[i][j];
-    cout<<"Topologically sorted array is \n";
+    cout<<"Topological traversal is \n";
     sort(a,n);
     return 0;
 }
