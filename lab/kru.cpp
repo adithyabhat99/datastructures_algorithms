@@ -6,7 +6,7 @@ class edge{
 };
 bool compare(edge &e1,edge &e2){
     if(e1.w==e2.w)
-        return e1.s<e1.s;
+        return e1.s<e2.s;
     return e1.w<e2.w;
 }
 int findParent(int *p,int n){
