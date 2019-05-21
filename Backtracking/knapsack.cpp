@@ -3,42 +3,49 @@
 */
 
 #include <iostream>
+#include<algorithm>
 using namespace std;
-int *P, *W, c, bestP, cp, cw;
-int bound(int i, int n)
+int c, bestP, cp, cw;
+class Items{
+        public:int P,W;
+};
+bool compare(Items &ob1,Items &ob2){
+    return (ob1.P/ob1.W)>(ob2.P/ob2.W);
+}
+int bound(int i, int n,Items *ob)
 {
     int cleft = c - cw;
     int b = cp;
-    while (i < n && W[i] <= cleft)
+    while (i < n && ob[i].W <= cleft)
     {
-        cleft -= W[i];
-        b += P[i];
+        cleft -= ob[i].W;
+        b += ob[i].P;
         i++;
     }
     if (i < n)
     {
-        b += P[i] / (W[i] * cleft);
+        b += (ob[i].P / ob[i].W) * cleft;
     }
     return b;
 }
-void knap(int i, int n)
+void knap(int i, int n,Items *ob)
 {
     if (i > n - 1)
     {
         bestP = cp;
         return;
     }
-    if (cw + W[i] <= c)
+    if (cw + ob[i].W <= c)
     {
-        cw += W[i];
-        cp += P[i];
-        knap(i + 1, n);
-        cw -= W[i];
-        cp -= P[i];
+        cw += ob[i].W;
+        cp += ob[i].P;
+        knap(i + 1, n,ob);
+        cw -= ob[i].W;
+        cp -= ob[i].P;
     }
-    if (bound(i + 1, n) > bestP)
+    if (bound(i + 1, n,ob) > bestP)
     {
-        knap(i + 1, n);
+        knap(i + 1, n,ob);
     }
 }
 int main()
@@ -46,20 +53,20 @@ int main()
     int n;
     cout << "Enter number of items\n";
     cin >> n;
-    P = new int[n];
-    W = new int[n];
+    Items ob[n];
     cout << "Enter weight array,then profit array\n";
     for (int i = 0; i < n; i++)
     {
-        cin >> W[i];
+        cin >> ob[i].W;
     }
     for (int i = 0; i < n; i++)
     {
-        cin >> P[i];
+        cin >> ob[i].P;
     }
+    sort(ob,ob+n,compare);
     cout << "Enter knapsack capacity\n";
     cin >> c;
-    knap(0, n);
+    knap(0, n,ob);
     cout << "Maximum profit is " << bestP << endl;
     return 0;
 }
