@@ -6,7 +6,7 @@ int knap(int *wt,int *p,int n,int W){
         for(int w=0;w<=W;w++){
             if(i==0 || w==0){
                 a[i][w]=0;
-            }
+            }   
             else if(wt[i-1]>w){
                 a[i][w]=a[i-1][w];
             }

@@ -3,7 +3,7 @@ using namespace std;
 int bino(int n,int r){
     int a[n+1][r+1],i,j;
     for(i=1;i<=n;i++){
-        for(j=0;j<=r;j++){
+        for(j=0;j<=r;j++){      
             if(i<j){
                 a[i][j]=0;
             }

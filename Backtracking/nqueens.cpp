@@ -1,7 +1,6 @@
 /*
 NQueens Problem
 */
-
 #include <iostream>
 using namespace std;
 int count = 1;
