@@ -1,34 +1,45 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-void rod(int p[],int s[],int r[],int n){
-	r[0]=0;
-	for(int j=1;j<=n;j++){
-		int q=-9999;
-		for(int i=1;i<j;i++){
-			if(q<p[i]+r[j-i]){
-				q=p[i]+r[j-i];
+void rod(int p[], int r[], int s[], int n)
+{
+	r[0] = 0;
+	for (int j = 1; j <= n; j++)
+	{
+		int q = -9999;
+		for (int i = 1; i < j; i++)
+		{
+			if (q < p[i] + r[j - i])
+			{
+				q = p[i] + r[j - i];
+				s[j] = i;
 			}
-			s[j]=i;
-			r[j]=q;
 		}
+		if(q<p[j]){
+			q=p[j];
+			s[j]=j;
+		}
+		r[j] = q;
 	}
 }
-int main(){
+int main()
+{
 	int n;
-	cout<<"Enter rod length\n";
-	cin>>n;
-	int p[n+1],i;
-	cout<<"Enter profit array\n";
-	for(i=1;i<=n;i++)
-		cin>>p[i];
-	int r[n+1];
-	int s[n+1];
-	rod(p,r,s,n);
-	while(n>=0){
-		cout<<s[n]<<" ";
-		n-=s[n];
+	cout << "Enter rod length\n";
+	cin >> n;
+	int p[n + 1], i;
+	cout << "Enter profit array\n";
+	for (i = 1; i <= n; i++)
+		cin >> p[i];
+	int r[n + 1];
+	int s[n + 1];
+	rod(p, r, s, n);
+	cout<<"Maximum profit possible is "<<r[n]<<endl<<"Solution is ";
+	while (n >= 0 && s[n]>0)
+	{
+		cout << s[n] << " ";
+		n -= s[n];
 	}
-	cout<<endl;
+	cout << endl;
 	return 0;
 }
 
